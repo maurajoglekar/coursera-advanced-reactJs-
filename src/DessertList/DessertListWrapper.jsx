@@ -1,8 +1,11 @@
 import DessertsList from "./DessertList";
 import styled from "styled-components";
+import { useTheme } from "../ThemeContext";
 
 const StyledContainer = styled.div`
   padding: 16px;
+  color: ${(props) => (props.theme === "light" ? "black" : "white")};
+  background-color: ${(props) => (props.theme === "light" ? "white" : "black")};
 `;
 const desserts = [
   {
@@ -28,8 +31,9 @@ const desserts = [
 ];
 
 function DessertListWrapper() {
+  const { theme } = useTheme();
   return (
-    <StyledContainer>
+    <StyledContainer theme={theme}>
       <h2>List of low calorie desserts:</h2>
       <DessertsList data={desserts} />
     </StyledContainer>
