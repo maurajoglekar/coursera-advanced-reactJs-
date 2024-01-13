@@ -2,6 +2,7 @@ import "./App.css";
 import { ThemeProvider, useTheme } from "./ThemeContext";
 import Switch from "./Switch";
 import RegistrationForm from "./RegistrationForm/RegistrationForm";
+import DessertListWrapper from "./DessertList/DessertListWrapper";
 
 const Title = ({ children }) => {
   const { theme } = useTheme();
@@ -35,8 +36,8 @@ const Content = () => {
       <Paragraph>
         We are a pizza loving family. And for years, I searched and searched and
         searched for the perfect pizza dough recipe. I tried dozens, or more.
-        And while some were good, none of them were that recipe that would
-        make me stop trying all of the others.
+        And while some were good, none of them were that recipe that would make
+        me stop trying all of the others.
       </Paragraph>
     </div>
   );
@@ -56,6 +57,7 @@ const Page = () => {
     <div className="Page">
       <Title>When it comes to dough</Title>
       <Content />
+      <DessertListWrapper />
       <RegistrationForm />
     </div>
   );
