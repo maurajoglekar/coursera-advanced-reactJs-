@@ -3,6 +3,8 @@ import { ThemeProvider, useTheme } from "./ThemeContext";
 import Switch from "./Switch";
 import RegistrationForm from "./RegistrationForm/RegistrationForm";
 import DessertListWrapper from "./DessertList/DessertListWrapper";
+import GiftCardPage from "./StateManagement/GiftCardPage";
+import FetchUser from "./Effects/FetchUser";
 
 const Title = ({ children }) => {
   const { theme } = useTheme();
@@ -59,6 +61,8 @@ const Page = () => {
       <Content />
       <DessertListWrapper />
       <RegistrationForm />
+      <GiftCardPage />
+      <FetchUser />
     </div>
   );
 };
