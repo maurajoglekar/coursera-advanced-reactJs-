@@ -1,12 +1,4 @@
 import { useState } from "react";
-import styled from "styled-components";
-import { useTheme } from "../ThemeContext";
-
-const StyledContainer = styled.div`
-  padding: 40px;
-  color: ${(props) => (props.theme === "light" ? "black" : "white")};
-  background-color: ${(props) => (props.theme === "light" ? "white" : "black")};
-`;
 
 export default function GiftCardPage() {
   const [giftCard, setGiftCard] = useState({
@@ -16,7 +8,6 @@ export default function GiftCardPage() {
     valid: true,
     instructions: "To use your coupon, click the button below.",
   });
-  const { theme } = useTheme();
 
   // The lab was to implement this function to update the state when the user clicks on the button
   // and uses the coupon
@@ -32,7 +23,7 @@ export default function GiftCardPage() {
   }
 
   return (
-    <StyledContainer theme={theme}>
+    <div>
       <h1>Gift Card Page</h1>
       <h2>
         Customer: {giftCard.firstName} {giftCard.lastName}
@@ -42,6 +33,6 @@ export default function GiftCardPage() {
       {giftCard.valid && (
         <button onClick={spendGiftCard}>Spend Gift Card</button>
       )}
-    </StyledContainer>
+    </div>
   );
 }

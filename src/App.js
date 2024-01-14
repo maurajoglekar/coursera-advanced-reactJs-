@@ -5,6 +5,18 @@ import RegistrationForm from "./RegistrationForm/RegistrationForm";
 import DessertListWrapper from "./DessertList/DessertListWrapper";
 import GiftCardPage from "./StateManagement/GiftCardPage";
 import FetchUser from "./Effects/FetchUser";
+import styled from "styled-components";
+
+const StyledContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const ThemeContainer = styled.div`
+  padding: 40px;
+  color: ${(props) => (props.theme === "light" ? "black" : "white")};
+  background-color: ${(props) => (props.theme === "light" ? "white" : "black")};
+`;
 
 const Title = ({ children }) => {
   const { theme } = useTheme();
@@ -59,10 +71,12 @@ const Page = () => {
     <div className="Page">
       <Title>When it comes to dough</Title>
       <Content />
-      <DessertListWrapper />
+      <StyledContainer>
+        <DessertListWrapper />
+        <GiftCardPage />
+        <FetchUser />
+      </StyledContainer>
       <RegistrationForm />
-      <GiftCardPage />
-      <FetchUser />
     </div>
   );
 };
@@ -70,15 +84,10 @@ const Page = () => {
 function App() {
   const { theme } = useTheme();
   return (
-    <div
-      className="App"
-      style={{
-        backgroundColor: theme === "light" ? "white" : "black",
-      }}
-    >
+    <ThemeContainer theme={theme}>
       <Header />
       <Page />
-    </div>
+    </ThemeContainer>
   );
 }
 
