@@ -1,12 +1,9 @@
 import { useEffect, useRef } from "react";
-export function usePrevious(val) {
+
+export const usePrevious = (val) => {
   const ref = useRef();
-
   useEffect(() => {
-    if (ref && ref.current) {
-      val = ref.current.ref;
-    }
+    ref.current = val;
   }, [val]);
-
   return ref.current;
-}
+};
