@@ -1,7 +1,6 @@
 import "./RegistrationForm.css";
 import { useState } from "react";
 import { validateEmail } from "../utils";
-import { useTheme } from "../ThemeContext";
 
 const PasswordErrorMessage = () => {
   return (
@@ -10,7 +9,6 @@ const PasswordErrorMessage = () => {
 };
 
 function RegistrationForm() {
-  const { theme } = useTheme();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -47,13 +45,7 @@ function RegistrationForm() {
   };
 
   return (
-    <div
-      className="FormContainer"
-      style={{
-        color: theme === "light" ? "black" : "white",
-        backgroundColor: theme === "light" ? "white" : "black",
-      }}
-    >
+    <div className="FormContainer">
       <form onSubmit={handleSubmit}>
         <fieldset>
           <h2>Sign Up</h2>

@@ -1,15 +1,24 @@
 import "./App.css";
 import { ThemeProvider, useTheme } from "./ThemeContext";
-import Switch from "./Switch";
+import Switch from "./Switch/Switch";
 import RegistrationForm from "./RegistrationForm/RegistrationForm";
 import DessertListWrapper from "./DessertList/DessertListWrapper";
 import GiftCardPage from "./StateManagement/GiftCardPage";
 import FetchUser from "./Effects/FetchUser";
 import styled from "styled-components";
+import Counter from "./customHooks/Counter";
+import Weekday from "./customHooks/Weekday";
 
 const StyledContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  div {
+    border: solid grey 1px;
+    padding: 1rem;
+    margin: 4px;
+  }
 `;
 
 const ThemeContainer = styled.div`
@@ -19,29 +28,11 @@ const ThemeContainer = styled.div`
 `;
 
 const Title = ({ children }) => {
-  const { theme } = useTheme();
-  return (
-    <h2
-      style={{
-        color: theme === "light" ? "black" : "white",
-      }}
-    >
-      {children}
-    </h2>
-  );
+  return <h2>{children}</h2>;
 };
 
 const Paragraph = ({ children }) => {
-  const { theme } = useTheme();
-  return (
-    <p
-      style={{
-        color: theme === "light" ? "black" : "white",
-      }}
-    >
-      {children}
-    </p>
-  );
+  return <p>{children}</p>;
 };
 
 const Content = () => {
@@ -75,6 +66,8 @@ const Page = () => {
         <DessertListWrapper />
         <GiftCardPage />
         <FetchUser />
+        <Counter />
+        <Weekday />
       </StyledContainer>
       <RegistrationForm />
     </div>
