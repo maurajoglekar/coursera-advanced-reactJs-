@@ -8,6 +8,7 @@ import FetchUser from "./Effects/FetchUser";
 import styled from "styled-components";
 import Counter from "./customHooks/Counter";
 import Weekday from "./customHooks/Weekday";
+import RadioGroupContainer from "./customHooks/RadioGroup/RadioGroupContainer";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -19,6 +20,12 @@ const StyledContainer = styled.div`
     padding: 1rem;
     margin: 4px;
   }
+`;
+
+const StyledContainer2 = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 `;
 
 const ThemeContainer = styled.div`
@@ -69,7 +76,10 @@ const Page = () => {
         <Counter />
         <Weekday />
       </StyledContainer>
-      <RegistrationForm />
+      <StyledContainer2>
+        <RegistrationForm />
+        <RadioGroupContainer />
+      </StyledContainer2>
     </div>
   );
 };
