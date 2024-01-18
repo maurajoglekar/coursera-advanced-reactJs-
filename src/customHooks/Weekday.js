@@ -19,11 +19,11 @@ const Weekday = () => {
   };
   return (
     <div style={{ padding: "40px" }}>
-      <h1>
+      <h3>
         Today is: {day}
         <br />
         {prevDay && <span>Previous work day was: {prevDay}</span>}
-      </h1>
+      </h3>
       <button onClick={getNextDay}>Get next day</button>
     </div>
   );

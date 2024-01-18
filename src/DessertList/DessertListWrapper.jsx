@@ -26,7 +26,7 @@ const desserts = [
 function DessertListWrapper() {
   return (
     <div>
-      <h2>List of low calorie desserts:</h2>
+      <h3>List of low calorie desserts:</h3>
       <DessertsList data={desserts} />
     </div>
   );

@@ -1,4 +1,4 @@
-import "./App.css";
+import "./CursorPositionWrapper.css";
 import { useEffect, useState } from "react";
 
 const MousePosition = ({ render }) => {

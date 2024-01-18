@@ -24,11 +24,11 @@ export default function GiftCardPage() {
 
   return (
     <div>
-      <h1>Gift Card Page</h1>
-      <h2>
+      <h3>Gift Card Page</h3>
+      <h5>
         Customer: {giftCard.firstName} {giftCard.lastName}
-      </h2>
-      <h3>{giftCard.text}</h3>
+      </h5>
+      <h4>{giftCard.text}</h4>
       <p>{giftCard.instructions}</p>
       {giftCard.valid && (
         <button onClick={spendGiftCard}>Spend Gift Card</button>

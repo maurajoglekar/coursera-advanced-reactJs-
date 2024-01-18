@@ -9,6 +9,7 @@ import styled from "styled-components";
 import Counter from "./customHooks/Counter";
 import Weekday from "./customHooks/Weekday";
 import RadioGroupContainer from "./customHooks/RadioGroup/RadioGroupContainer";
+import CursorPositionWrapper from "./reusingBehavior/renderProps/CursorPositionWrapper";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -73,12 +74,13 @@ const Page = () => {
         <DessertListWrapper />
         <GiftCardPage />
         <FetchUser />
-        <Counter />
         <Weekday />
       </StyledContainer>
       <StyledContainer2>
-        <RegistrationForm />
+        <Counter />
         <RadioGroupContainer />
+        <CursorPositionWrapper />
+        <RegistrationForm />
       </StyledContainer2>
     </div>
   );
