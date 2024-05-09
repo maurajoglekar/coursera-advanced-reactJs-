@@ -10,6 +10,8 @@ import Counter from "./customHooks/Counter";
 import Weekday from "./customHooks/Weekday";
 import RadioGroupContainer from "./customHooks/RadioGroup/RadioGroupContainer";
 import CursorPositionWrapper from "./reusingBehavior/renderProps/CursorPositionWrapper";
+import TodoWrapper from "./final/TodoWrapper";
+import HOCWrapper from "./final/HOCWrapper";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -81,6 +83,10 @@ const Page = () => {
         <RadioGroupContainer />
         <CursorPositionWrapper />
         <RegistrationForm />
+      </StyledContainer2>
+      <StyledContainer2>
+        <TodoWrapper />
+        <HOCWrapper />
       </StyledContainer2>
     </div>
   );
