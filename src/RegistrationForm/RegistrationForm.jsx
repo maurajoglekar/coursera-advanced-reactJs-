@@ -95,9 +95,9 @@ function RegistrationForm() {
               }}
               type="password"
             />
-            {password.isTouched && password.value.length < 8 ? (
+            {password.isTouched && password.value.length < 8 && (
               <PasswordErrorMessage />
-            ) : null}
+            )}
           </div>
           <div className="Field">
             <label>

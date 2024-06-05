@@ -1,6 +1,11 @@
 import DessertsList from "./DessertList";
 
-const desserts = [
+export interface Dessert {
+  name: string;
+  calories: number;
+  createdAt: string;
+}
+const desserts: Dessert[] = [
   {
     name: "Chocolate Cake",
     calories: 400,
@@ -27,7 +32,7 @@ function DessertListWrapper() {
   return (
     <div>
       <h3>List of low calorie desserts:</h3>
-      <DessertsList data={desserts} />
+      <DessertsList desserts={desserts} />
     </div>
   );
 }

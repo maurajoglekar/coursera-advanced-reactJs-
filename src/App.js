@@ -12,6 +12,16 @@ import RadioGroupContainer from "./customHooks/RadioGroup/RadioGroupContainer";
 import CursorPositionWrapper from "./reusingBehavior/renderProps/CursorPositionWrapper";
 import TodoWrapper from "./final/TodoWrapper";
 import HOCWrapper from "./final/HOCWrapper";
+import InputFileForm from "./practice/InputFileForm";
+import ControlledForm1 from "./practice/ControlledForm1";
+import FeedbackForm1 from "./practice/FeedbackForm1";
+import Blog from "./practice/Blog";
+import { UserProvider } from "./practice/UserContext";
+import GoalsApp from "./practice/Goals/GoalsApp";
+//import TabsOrig from "./practice/tabs/TabsOrig";
+import { tabsData } from "./practice/tabs/Tabs";
+import Tabs from "./practice/tabs/Tabs";
+import AutoComplete from "./practice/autocomplete/AutoComplete";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -70,6 +80,11 @@ const Header = () => {
 const Page = () => {
   return (
     <div className="Page">
+      <AutoComplete />
+      <Tabs items={tabsData} />
+      <GoalsApp />
+      <Blog />
+      <FeedbackForm1 />
       <Title>When it comes to dough</Title>
       <Content />
       <StyledContainer>
@@ -88,6 +103,10 @@ const Page = () => {
         <TodoWrapper />
         <HOCWrapper />
       </StyledContainer2>
+      {/* <StyledContainer2>
+        <InputFileForm />
+        <ControlledForm1 />
+      </StyledContainer2> */}
     </div>
   );
 };
@@ -105,7 +124,9 @@ function App() {
 function Root() {
   return (
     <ThemeProvider>
-      <App />
+      <UserProvider>
+        <App />
+      </UserProvider>
     </ThemeProvider>
   );
 }
