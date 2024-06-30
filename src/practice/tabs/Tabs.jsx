@@ -1,4 +1,10 @@
 import { useState } from "react";
+import styled from "styled-components";
+
+const StyledButton = styled.button`
+  background: ${({ isActive }) => (isActive ? "purple" : "#f5f5f5")};
+  color: ${({ isActive }) => (isActive ? "white" : "black")};
+`;
 
 export const tabsData = [
   {
@@ -24,13 +30,22 @@ export const tabsData = [
 const Tabs = ({ defaultValue, items }) => {
   const [value, setValue] = useState(defaultValue ?? items[0].value);
 
+  const chosenContent = items.find((item) => item.value === value);
+
   return (
     <div>
       <div>
         {items.map((item) => (
-          <button>{item.label}</button>
+          <StyledButton
+            key={item.value}
+            isActive={item.value === value}
+            onClick={() => setValue(item.value)}
+          >
+            {item.label}
+          </StyledButton>
         ))}
       </div>
+      <div>{chosenContent.panel ?? `No content for this tab`}</div>
     </div>
   );
 };
