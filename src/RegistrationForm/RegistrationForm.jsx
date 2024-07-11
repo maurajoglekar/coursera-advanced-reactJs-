@@ -8,7 +8,7 @@ const PasswordErrorMessage = () => {
   );
 };
 
-function RegistrationForm() {
+const RegistrationForm = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -18,7 +18,7 @@ function RegistrationForm() {
   });
   const [role, setRole] = useState("role");
 
-  const getIsFormValid = () => {
+  const isFormValid = () => {
     return (
       firstName &&
       validateEmail(email) &&
@@ -48,20 +48,21 @@ function RegistrationForm() {
     <div className="FormContainer">
       <form onSubmit={handleSubmit}>
         <fieldset>
-          <h2>Sign Up</h2>
+          <h2>Registration Form</h2>
           <div className="Field">
-            <label>
+            <label forHtml="firstName">
               First name <sup>*</sup>
             </label>
             <input
-              placeholder="First name"
+              id="firstName"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
             />
           </div>
           <div className="Field">
-            <label>Last name</label>
+            <label forHtml="lastName">Last name</label>
             <input
+              id="lastName"
               placeholder="Last name"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
@@ -109,13 +110,13 @@ function RegistrationForm() {
               <option value="business">Business</option>
             </select>
           </div>
-          <button type="submit" disabled={!getIsFormValid()}>
+          <button type="submit" disabled={!isFormValid()}>
             Create account
           </button>
         </fieldset>
       </form>
     </div>
   );
-}
+};
 
 export default RegistrationForm;

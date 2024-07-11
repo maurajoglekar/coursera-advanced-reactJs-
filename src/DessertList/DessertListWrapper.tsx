@@ -1,5 +1,3 @@
-import DessertsList from "./DessertList";
-
 export interface Dessert {
   name: string;
   calories: number;
@@ -28,13 +26,32 @@ const desserts: Dessert[] = [
   },
 ];
 
-function DessertListWrapper() {
+interface Props {
+  desserts: Dessert[];
+}
+const DessertsList = ({ desserts }: Props) => {
+  const modifiedList = desserts
+    .filter((d) => d.calories >= 300)
+    .sort((a, b) => b.calories - a.calories);
+  return (
+    <ul>
+      {modifiedList.map((dessert) => {
+        return (
+          <li
+            key={dessert.name}
+          >{`${dessert.name} - ${dessert.calories} cal`}</li>
+        );
+      })}
+    </ul>
+  );
+};
+const DessertListWrapper = () => {
   return (
     <div>
-      <h3>List of low calorie desserts:</h3>
+      <h3> Header for desserts</h3>
       <DessertsList desserts={desserts} />
     </div>
   );
-}
+};
 
 export default DessertListWrapper;
