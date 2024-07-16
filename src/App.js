@@ -22,6 +22,8 @@ import GoalsApp from "./practice/Goals/GoalsApp";
 import { tabsData } from "./practice/tabs/Tabs";
 import Tabs from "./practice/tabs/Tabs";
 import AutoComplete from "./practice/autocomplete/AutoComplete";
+import ReducerExample from "./practice/ReducerExample";
+import RefExample from "./practice/RefExample";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -80,6 +82,8 @@ const Header = () => {
 const Page = () => {
   return (
     <div className="Page">
+      <RefExample />
+      <ReducerExample />
       <AutoComplete />
       <Tabs items={tabsData} />
       <GoalsApp />
