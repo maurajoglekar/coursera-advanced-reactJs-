@@ -24,6 +24,8 @@ import Tabs from "./practice/tabs/Tabs";
 import AutoComplete from "./practice/autocomplete/AutoComplete";
 import ReducerExample from "./practice/ReducerExample";
 import RefExample from "./practice/RefExample";
+import SignupForm from "./SignupForm/SignupForm";
+import Homepage from "./practice/cart/Homepage";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -82,7 +84,9 @@ const Header = () => {
 const Page = () => {
   return (
     <div className="Page">
-      <RefExample />
+      <SignupForm />
+      <Homepage />
+      {/* <RefExample />
       <ReducerExample />
       <AutoComplete />
       <Tabs items={tabsData} />
@@ -106,7 +110,7 @@ const Page = () => {
       <StyledContainer2>
         <TodoWrapper />
         <HOCWrapper />
-      </StyledContainer2>
+      </StyledContainer2> */}
       {/* <StyledContainer2>
         <InputFileForm />
         <ControlledForm1 />

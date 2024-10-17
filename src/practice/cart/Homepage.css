@@ -1,0 +1,10 @@
+.home {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 200px;
+}

@@ -27,8 +27,8 @@ export const tabsData = [
   },
 ];
 
-const Tabs = ({ defaultValue, items }) => {
-  const [value, setValue] = useState(defaultValue ?? items[0].value);
+const Tabs = ({ items }) => {
+  const [value, setValue] = useState(items[0].value);
 
   const chosenContent = items.find((item) => item.value === value);
 
